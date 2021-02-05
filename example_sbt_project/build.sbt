@@ -24,10 +24,7 @@ libraryDependencies ++= Seq(
   "org.apache.spark" %% "spark-core" % SparkVersion % dependencyScope exclude("org.apache.hadoop", "*"),
   "org.apache.spark" %% "spark-sql" % SparkVersion % dependencyScope exclude("org.apache.hadoop", "*"),
   "org.apache.hadoop" % "hadoop-mapreduce-client-core" % HadoopVersion % dependencyScope,
-  "org.apache.hadoop" % "hadoop-common" % HadoopVersion % dependencyScope,
-  "org.datasyslab" % "geospark" % GeoSparkVersion,
-  "org.datasyslab" % "geospark-sql_".concat(SparkCompatibleVersion) % GeoSparkVersion ,
-  "org.datasyslab" % "geospark-viz_".concat(SparkCompatibleVersion) % GeoSparkVersion
+  "org.apache.hadoop" % "hadoop-common" % HadoopVersion % dependencyScope
 )
 
 assemblyMergeStrategy in assembly := {
@@ -40,6 +37,3 @@ assemblyMergeStrategy in assembly := {
 }
 
 resolvers += "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots"
-//resolvers += ("Open Source Geospatial Foundation Repository" at "http://download.osgeo.org/webdav/geotools").withAllowInsecureProtocol(true)
-resolvers += "Open Source Geospatial Foundation Repository" at "http://download.osgeo.org/webdav/geotools"
-

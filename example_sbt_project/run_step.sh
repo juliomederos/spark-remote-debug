@@ -69,6 +69,9 @@ spark_submit () {
 
 port_forward () {
 
+    # close ssh tunnels
+    for pid in $(ps aux | grep 'ssh.*-N -f -L' | awk '{print $2}'); do kill -9 $pid; done
+
     application_master=$(curl -L "$yarn_endpoint/apps/?user=$ssh_user&state=ACCEPTED&limit=1" | jq -r '.apps.app[0].amHostHttpAddress' | cut -d':' -f 1)
     echo ">>> Application master : $application_master"
 

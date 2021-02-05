@@ -10,11 +10,11 @@ POC Spark remote debug
 
 Create a cluster following the instructions in https://github.com/juliomederos/docker-spark-yarn-cluster
 
-- IntelliJ
-
-- jq
-- ssh
-- scp
+Local machine: 
+	- IntelliJ
+	- jq
+	- ssh
+	- scp
 
 ---
 
@@ -48,8 +48,6 @@ TODO copy parameters from IntelliJ
 
 To debug in the cluster multiple times it is useful to automate the steps.
 
-Copy the next files from 'scripts' folder into the project root:
-
 ```
 # Creates the jar, transfer it into the cluster, run spark-submit with debug parameters
 run_step.sh package transfer spark_submit 
@@ -60,5 +58,7 @@ run_step.sh package transfer spark_submit
 run_step.sh porf_forwarding
 ```
 
+IDE configuration:
 
+TODO
 
